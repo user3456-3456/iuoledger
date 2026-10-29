@@ -13,3 +13,10 @@ const amountError = document.getElementById("amount-error");
 const formError = document.getElementById("form-error");
 const successMessage = document.getElementById("success-message");
 const recentList = document.getElementById("recent-list");
+
+// ---------- 2. Helpers to show and hide error messages ----------
+// The "hidden" attribute is what hides an element. Setting it to false shows it.
+function showError(element, message) {
+  element.textContent = message;
+  element.hidden = false;
+}

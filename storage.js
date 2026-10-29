@@ -57,3 +57,12 @@ function formatMoney(amount) {
 function directionLabel(direction) {
   return direction === "in" ? "Owes me" : "I owe";
 }
+
+// Build a table cell <td> that contains plain text.
+// textContent is safe: if someone types HTML as a name, it shows as text
+// and does not run as code.
+function createCell(text) {
+  const cell = document.createElement("td");
+  cell.textContent = text;
+  return cell;
+}

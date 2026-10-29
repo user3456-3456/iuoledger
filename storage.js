@@ -29,3 +29,16 @@ function loadIOUs() {
     return [];
   }
 }
+
+// Save the whole IOU array. Returns true if it worked, false if it failed.
+function saveIOUs(ious) {
+  try {
+    // Turn the array into text, then store it under our key.
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ious));
+    return true;
+  } catch (error) {
+    // Can happen if the browser blocks storage or it is full.
+    console.error("Could not save IOUs:", error);
+    return false;
+  }
+}

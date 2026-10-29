@@ -106,3 +106,15 @@ function applyFilters() {
     emptyMessage.hidden = true;
   }
 }
+
+// ---------- 6. Events ----------
+// "input" fires on every keystroke; "change" fires when a dropdown changes.
+searchBox.addEventListener("input", applyFilters);
+directionSelect.addEventListener("change", applyFilters);
+statusSelect.addEventListener("change", applyFilters);
+ 
+clearButton.addEventListener("click", function () {
+  searchBox.value = "";
+  directionSelect.value = "all";
+  statusSelect.value = "all";
+  applyFilters();

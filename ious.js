@@ -119,3 +119,7 @@ clearButton.addEventListener("click", function () {
   statusSelect.value = "all";
   applyFilters();
   });
+
+  // ONE click listener on the table body handles every button in every row.
+// This is called event delegation. We need it because the rows are rebuilt
+// each time, so listeners attached to individual buttons would disappear.

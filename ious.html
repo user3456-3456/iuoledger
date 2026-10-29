@@ -61,7 +61,27 @@
 
 
     <p class="lbl" style="margin-bottom: 12px;">Showing 6 of 6 IOUs</p>
-    
+
+
+    <section class="card" aria-label="IOU list">
+        <div class="tw">
+          <table>
+            <thead>
+              <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Note</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Esther N.</td><td><span class="pill out">I owe</span></td><td class="amount">Ksh60.00</td><td>2026-10-30</td><td>Groceries</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+              <tr class="done"><td>David M.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh80.00</td><td>-</td><td>Textbook</td><td><span class="pill paid">Paid</span></td><td><button type="button" class="btn">Mark unpaid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+              <tr><td>Cynthia W.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh300.00</td><td>2026-11-20</td><td>Rent top-up</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+              <tr><td>Brian O.</td><td><span class="pill out">I owe</span></td><td class="amount">Ksh45.00</td><td>2026-11-02</td><td>Concert ticket</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+              <tr><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh120.00</td><td>2026-11-05</td><td>Lunch and airtime</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+              <tr class="done"><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh25.00</td><td>-</td><td>Taxi</td><td><span class="pill paid">Paid</span></td><td><button type="button" class="btn">Mark unpaid</button> <button type="button" class="btn danger">Delete</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
   </main>
     
 </body>

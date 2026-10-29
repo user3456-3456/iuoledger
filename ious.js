@@ -10,3 +10,7 @@ const clearButton = document.getElementById("clear-filters");
 const tableBody = document.getElementById("iou-body");
 const resultCount = document.getElementById("result-count");
 const emptyMessage = document.getElementById("empty-message");
+
+// ---------- 2. Load the saved IOUs once when the page opens ----------
+// "let" (not "const") because we replace this array after a delete.
+let allIOUs = loadIOUs();

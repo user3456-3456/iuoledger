@@ -30,3 +30,6 @@ a { color: var(--ink); }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
+/* ---------- Header, navigation, footer ---------- */
+header { background: var(--palette-2); border-bottom: 1px solid var(--palette-4); }
+footer { background: var(--palette-2); border-top: 1px solid var(--palette-4); padding: 20px 0; color: var(--muted); font-size: 0.9rem; }

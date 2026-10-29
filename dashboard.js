@@ -25,3 +25,19 @@ function showTotals() {
       }
     }
   });
+
+    const net = owedToMe - iOwe;
+ 
+  // Put a + or - in front of the net balance (nothing when it is exactly 0).
+  let sign = "";
+  if (net > 0) {
+    sign = "+";
+  } else if (net < 0) {
+    sign = "-";
+  }
+
+    owedToMeText.textContent = formatMoney(owedToMe);
+    iOweText.textContent = formatMoney(iOwe);
+    // Math.abs removes the minus so we don't get a double sign like "--".
+    netBalanceText.textContent = sign + formatMoney(Math.abs(net));
+}

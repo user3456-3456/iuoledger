@@ -91,3 +91,18 @@ function applyFilters() {
     // An IOU is kept only if ALL three are true.
     return matchesName && matchesDirection && matchesStatus;
   });
+
+    renderTable(matches);
+  resultCount.textContent = "Showing " + matches.length + " of " + allIOUs.length + " IOUs";
+ 
+  // Two different empty messages for two different situations.
+  if (allIOUs.length === 0) {
+    emptyMessage.textContent = "No IOUs yet. Use Add IOU to record your first one.";
+    emptyMessage.hidden = false;
+  } else if (matches.length === 0) {
+    emptyMessage.textContent = "No IOUs match your search or filters.";
+    emptyMessage.hidden = false;
+  } else {
+    emptyMessage.hidden = true;
+  }
+}

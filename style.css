@@ -61,3 +61,9 @@ h2 { margin: 0; font-size: 1.15rem; }
 .btn.primary { background: var(--palette-4); }
 .btn.primary:hover { background: var(--palette-5); }
 .btn.danger { color: var(--danger); }
+
+.pill { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; }
+.pill.in { background: var(--palette-4); }                         /* they owe me */
+.pill.out { background: var(--ink); color: var(--palette-1); }     /* I owe them */
+.pill.paid { background: var(--palette-3); color: var(--muted); }
+.pill.unpaid { border: 1px solid var(--line); }

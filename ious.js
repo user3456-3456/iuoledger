@@ -27,3 +27,5 @@ function createActionButton(label, action, id, extraClass) {
   button.dataset.action = action;
   return button;
 }
+
+// ---------- 4. this code will draw the table from whatever list we give it ----------

@@ -6,3 +6,6 @@ const owedToMeText = document.getElementById("owed-to-me");
 const iOweText = document.getElementById("i-owe");
 const netBalanceText = document.getElementById("net-balance");
 const recentBody = document.getElementById("recent-body");
+
+// ---------- 2. Load the saved IOUs ----------
+const ious = loadIOUs();

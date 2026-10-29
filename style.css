@@ -24,5 +24,9 @@ body {
 
 /* some rules */
 a { color: var(--ink); }
+/* Shows a visible outline around the item */
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 [hidden] { display: none !important; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+

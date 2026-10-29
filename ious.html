@@ -22,68 +22,65 @@
   </header>
 
   <main>
-     <div class="wrap">
-        <div class="head">
-            <div>
-                <h1>All IOUs</h1>
-                <p class="sub">Search, filter, mark paid or delete.</p>
+             <!-- everything on the page sits inside ONE .wrap so it lines up with the header -->
+        <div class="wrap">
+            <div class="head">
+                <div>
+                    <h1>All IOUs</h1>
+                    <p class="sub">Search, filter, mark paid or delete.</p>
+                </div>
+                <a href="add.html" class="btn primary">Add IOU</a>
             </div>
-            <a href="add.html" class="btn primary">Add IOU</a>       
+
+            <section class="card filters" aria-label="Search and filters">
+                <div class="wide">
+                    <label class="lbl" for="search">Search by person</label>
+                    <input id="search" type="search" placeholder="Type a name...">
+                </div>
+
+                <div>
+                    <label class="lbl" for="direction">Direction</label>
+                    <select id="direction">
+                        <option value="all">All</option>
+                        <option value="in">Owes me</option>
+                        <option value="out">I owe</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="lbl" for="status">Status</label>
+                    <select id="status">
+                        <option value="all">All</option>
+                        <option value="unpaid">Unpaid</option>
+                        <option value="paid">Paid</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn" id="clear-filters">Clear filters</button>
+            </section>
+
+            <!-- ious.js writes "Showing X of Y IOUs" here -->
+            <p class="lbl" id="result-count" style="margin-bottom: 12px;">Showing 0 of 0 IOUs</p>
+
+            <section class="card" aria-label="IOU list">
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Note</th><th>Status</th><th>Actions</th></tr>
+                        </thead>
+                        <!-- ious.js fills this table body -->
+                        <tbody id="iou-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ious.js shows a message here when there is nothing to list -->
+            <p class="sub" id="empty-message" hidden></p>
         </div>
-     </div>
-
-     <section class="card filters" aria-label="Search and filters">
-        <div class="wide">
-            <label class="lbl" for="search">Search by person</label>
-            <input id="search" type="search" placeholder="Type a name...">
-        </div>
-
-        <div>
-          <label class="lbl" for="direction">Direction</label>
-          <select id="direction">
-            <option value="all">All</option>
-            <option value="in">Owes me</option>
-            <option value="out">I owe</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="lbl" for="status">Status</label>
-          <select id="status">
-            <option value="all">All</option>
-            <option value="unpaid">Unpaid</option>
-            <option value="paid">Paid</option>
-          </select>
-        </div>
-
-        <button type="button" class="btn">Clear filters</button>
-      </section>
-
-
-    <p class="lbl" style="margin-bottom: 12px;">Showing 6 of 6 IOUs</p>
-
-<!-- sample data before js -->
-    <section class="card" aria-label="IOU list">
-        <div class="tw">
-          <table>
-            <thead>
-              <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Note</th><th>Status</th><th>Actions</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Esther N.</td><td><span class="pill out">I owe</span></td><td class="amount">Ksh60.00</td><td>2026-10-30</td><td>Groceries</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-              <tr class="done"><td>David M.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh80.00</td><td>-</td><td>Textbook</td><td><span class="pill paid">Paid</span></td><td><button type="button" class="btn">Mark unpaid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-              <tr><td>Cynthia W.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh300.00</td><td>2026-11-20</td><td>Rent top-up</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-              <tr><td>Brian O.</td><td><span class="pill out">I owe</span></td><td class="amount">Ksh45.00</td><td>2026-11-02</td><td>Concert ticket</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-              <tr><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh120.00</td><td>2026-11-05</td><td>Lunch and airtime</td><td><span class="pill unpaid">Unpaid</span></td><td><button type="button" class="btn">Mark paid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-              <tr class="done"><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh25.00</td><td>-</td><td>Taxi</td><td><span class="pill paid">Paid</span></td><td><button type="button" class="btn">Mark unpaid</button> <button type="button" class="btn danger">Delete</button></td></tr>
-            </tbody>
-          </table>
-        </div>
-    </section>
   </main>
 
     <footer>
-        <div class="wrap">IOU Ledger. Your data is safe. Trust Me.</div>
+      <div class="wrap">IOU Ledger. Your IOUs are saved in this browser only.</div>
     </footer>
 <!-- javascript connection code -->
   <script src="storage.js"></script>

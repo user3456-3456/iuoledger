@@ -68,3 +68,26 @@ function renderTable(list) {
     tableBody.appendChild(row);
   });
 }
+
+// ---------- 5. Read all three controls, filter, then redraw ----------
+// ONE function reads search + direction + status together, so the
+// filters never fight each other.
+function applyFilters() {
+  const query = searchBox.value.trim().toLowerCase();
+  const direction = directionSelect.value; // "all", "in" or "out"
+  const status = statusSelect.value;       // "all", "unpaid" or "paid"
+ 
+  // slice() makes a copy so reverse() doesn't change the real array.
+  // reverse() puts the newest IOU at the top.
+  const newestFirst = allIOUs.slice().reverse();
+ 
+  const matches = newestFirst.filter(function (iou) {
+    // includes() is true if the name contains the typed text. An empty
+    // search matches everything. toLowerCase() makes it case-insensitive.
+    const matchesName = iou.person.toLowerCase().includes(query);
+    const matchesDirection = direction === "all" || iou.direction === direction;
+    const matchesStatus = status === "all" || iou.status === status;
+ 
+    // An IOU is kept only if ALL three are true.
+    return matchesName && matchesDirection && matchesStatus;
+  });

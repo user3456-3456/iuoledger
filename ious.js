@@ -118,3 +118,4 @@ clearButton.addEventListener("click", function () {
   directionSelect.value = "all";
   statusSelect.value = "all";
   applyFilters();
+  });

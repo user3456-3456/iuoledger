@@ -110,4 +110,13 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
-  
+    // Build one IOU as an object.
+  const newIOU = {
+    id: Date.now(),                           // unique number (milliseconds since 1970)
+    person: person,
+    amount: Math.round(amount * 100) / 100,   // keep exactly 2 decimal places
+    direction: direction,                     // "in" = they owe me, "out" = I owe them
+    dueDate: dueInput.value,                  // "" if left empty
+    note: noteInput.value.trim(),
+    status: "unpaid"
+  };

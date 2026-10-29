@@ -42,3 +42,13 @@ function saveIOUs(ious) {
     return false;
   }
 }
+
+// ---------- Display helpers (used by more than one page) ----------
+ 
+// Turn a number into money text: 1250 -> "Ksh1,250.00"
+function formatMoney(amount) {
+  return "Ksh" + Number(amount).toLocaleString("en-KE", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}

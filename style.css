@@ -21,3 +21,8 @@ body {
   color: var(--ink);
   line-height: 1.45;
 }
+
+/* some rules */
+a { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+[hidden] { display: none !important; }

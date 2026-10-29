@@ -52,3 +52,8 @@ function formatMoney(amount) {
     maximumFractionDigits: 2
   });
 }
+
+// Our data stores direction as "in" or "out". People should read words.
+function directionLabel(direction) {
+  return direction === "in" ? "Owes me" : "I owe";
+}

@@ -161,3 +161,6 @@ tableBody.addEventListener("click", function (event) {
   }
   applyFilters();
 });
+
+// ---------- 7. Draw the list when the page first opens ----------
+applyFilters();

@@ -67,3 +67,11 @@ h2 { margin: 0; font-size: 1.15rem; }
 .pill.out { background: var(--ink); color: var(--palette-1); }     /* I owe them */
 .pill.paid { background: var(--palette-3); color: var(--muted); }
 .pill.unpaid { border: 1px solid var(--line); }
+
+/* ---------- Tables ---------- */
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 0.8rem; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--palette-4); white-space: nowrap; }
+td { padding: 12px; border-bottom: 1px solid var(--palette-3); white-space: nowrap; }
+tr.done td { color: var(--muted); }
+tr.done .amount { text-decoration: line-through; }

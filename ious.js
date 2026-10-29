@@ -153,4 +153,11 @@ tableBody.addEventListener("click", function (event) {
       return item.id !== id;
     });
   }
-  
+   
+  // Save the change, then redraw. applyFilters() (not renderTable) keeps
+  // the user's search and filters in place.
+  if (!saveIOUs(allIOUs)) {
+    alert("Could not save your change. Your browser may be blocking storage.");
+  }
+  applyFilters();
+});

@@ -66,3 +66,12 @@ function createCell(text) {
   cell.textContent = text;
   return cell;
 }
+
+// Build a small label like <span class="pill in">Owes me</span>.
+// style.css already has the colours for pill + in / out / paid / unpaid.
+function createPill(text, className) {
+  const pill = document.createElement("span");
+  pill.className = "pill " + className;
+  pill.textContent = text;
+  return pill;
+}

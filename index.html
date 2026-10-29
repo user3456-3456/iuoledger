@@ -33,33 +33,28 @@
              </div>
 
             <!-- section tells the browser that this section is for totals -->
+            <!-- the ids below are how dashboard.js finds each number -->
             <section class="stats" aria-label="Totals">
-            <div class="card"><p class="lbl">Owed to me</p><p class="big">Ksh420.00</p></div>
-            <div class="card"><p class="lbl">I owe</p><p class="big">Ksh105.00</p></div>
-            <div class="card"><p class="lbl">Net balance</p><p class="big">+Ksh315.00</p></div>
+                <div class="card"><p class="lbl">Owed to me</p><p class="big" id="owed-to-me">Ksh0.00</p></div>
+                <div class="card"><p class="lbl">I owe</p><p class="big" id="i-owe">Ksh0.00</p></div>
+                <div class="card"><p class="lbl">Net balance</p><p class="big" id="net-balance">Ksh0.00</p></div>
             </section>
 
             <section class="card" aria-label="Recent IOUs">
-            <div class="head" style="margin-bottom: 8px;">
-                <h2>Recent IOUs</h2>
-                <a href="ious.html">View all IOUs</a>
-            </div>
-            <div class="tw">
-                <table>
-                    <thead>
-                        <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                         <tr><td>Esther N.</td><td><span class="pill out">I owe</span></td><td>Ksh60.00</td><td>2026-10-30</td><td><span class="pill unpaid">Unpaid</span></td></tr>
-                         <tr class="done"><td>David M.</td><td><span class="pill in">Owes me</span></td><td class="amount">Ksh80.00</td><td>-</td><td><span class="pill paid">Paid</span></td></tr>
-                         <tr><td>Cynthia W.</td><td><span class="pill in">Owes me</span></td><td>Ksh300.00</td><td>2026-11-20</td><td><span class="pill unpaid">Unpaid</span></td></tr>
-                         <tr><td>Brian O.</td><td><span class="pill out">I owe</span></td><td>Ksh45.00</td><td>2026-11-02</td><td><span class="pill unpaid">Unpaid</span></td></tr>
-                         <tr><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td>Ksh120.00</td><td>2026-11-05</td><td><span class="pill unpaid">Unpaid</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-             </section>
-        </div>
+                <div class="head" style="margin-bottom: 8px;">
+                    <h2>Recent IOUs</h2>
+                    <a href="ious.html">View all IOUs</a>
+                </div>
+                <div class="tw">
+                    <table>
+                        <thead>
+                            <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Status</th></tr>
+                        </thead>
+                        <!-- dashboard.js fills this table body -->
+                        <tbody id="recent-body"></tbody>
+                    </table>
+                </div>
+            </section>        </div>
     </main>
 
     <footer>

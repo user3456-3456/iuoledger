@@ -17,3 +17,15 @@ function loadIOUs() {
     if (!saved) {
       return [];
     }
+
+     // Turn the saved text back into a real JavaScript array.
+    const parsed = JSON.parse(saved);
+ 
+    // Safety check: if the saved data is damaged, don't crash the page.
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    // JSON.parse throws an error if the text is broken. We catch it here.
+    console.error("Could not read IOUs:", error);
+    return [];
+  }
+}

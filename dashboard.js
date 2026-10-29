@@ -85,3 +85,7 @@ function showRecent() {
     recentBody.appendChild(row);
   });
 }
+
+// ---------- 5. Run both when the page opens ----------
+showTotals();
+showRecent();

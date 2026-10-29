@@ -49,3 +49,8 @@ h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.02em; }
 h2 { margin: 0; font-size: 1.15rem; }
 .sub { margin: 4px 0 0; color: var(--muted); }
 .lbl { margin: 0; font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+
+.head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.card { background: var(--palette-2); border: 1px solid var(--palette-3); border-radius: 14px; padding: 20px; }
+.stats { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 24px; }
+.big { margin: 6px 0 0; font-size: 2.1rem; font-weight: 700; }

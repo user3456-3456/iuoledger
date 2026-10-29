@@ -53,3 +53,38 @@ function validate(person, amount) {
  
   return isValid;
 }
+
+
+// ---------- 4. Show the 3 newest IOUs (so this page displays data too) ----------
+function renderRecent() {
+  const ious = loadIOUs();
+ 
+  // slice(-3) takes the last 3 items; reverse() puts the newest first.
+  const newestThree = ious.slice(-3).reverse();
+ 
+  recentList.innerHTML = ""; // clear the old list before redrawing
+ 
+  if (newestThree.length === 0) {
+    const emptyItem = document.createElement("li");
+    emptyItem.textContent = "Nothing saved yet. Your newest IOUs will show here.";
+    recentList.appendChild(emptyItem);
+    return;
+  }
+ 
+  newestThree.forEach(function (iou) {
+    const item = document.createElement("li");
+ 
+    // Left side: name + coloured label
+    const left = document.createElement("span");
+    left.textContent = iou.person + " ";
+    left.appendChild(createPill(directionLabel(iou.direction), iou.direction));
+ 
+    // Right side: the amount
+    const right = document.createElement("span");
+    right.textContent = formatMoney(iou.amount);
+ 
+    item.appendChild(left);
+    item.appendChild(right);
+    recentList.appendChild(item);
+  });
+}

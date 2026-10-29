@@ -120,3 +120,12 @@ form.addEventListener("submit", function (event) {
     note: noteInput.value.trim(),
     status: "unpaid"
   };
+
+    // The save routine: load -> change -> save the whole array back.
+  const ious = loadIOUs();
+  ious.push(newIOU);
+ 
+  if (!saveIOUs(ious)) {
+    showError(formError, "Could not save. Your browser may be blocking storage.");
+    return;
+  }

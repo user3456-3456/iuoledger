@@ -75,3 +75,9 @@ th { text-align: left; font-size: 0.8rem; color: var(--muted); padding: 10px 12p
 td { padding: 12px; border-bottom: 1px solid var(--palette-3); white-space: nowrap; }
 tr.done td { color: var(--muted); }
 tr.done .amount { text-decoration: line-through; }
+
+/* ---------- Filters and forms ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin-bottom: 16px; }
+.filters > div { flex: 1 1 160px; }
+.filters > div.wide { flex: 2 1 240px; }
+

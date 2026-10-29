@@ -55,3 +55,33 @@ function showRecent() {
     recentBody.appendChild(emptyRow);
     return;
   }
+
+    // slice(-5) = last 5 items, reverse() = newest first.
+  const newestFive = ious.slice(-5).reverse();
+ 
+  newestFive.forEach(function (iou) {
+    const row = document.createElement("tr");
+    const isPaid = iou.status === "paid";
+ 
+    if (isPaid) {
+      row.classList.add("done"); // grey + strikethrough from style.css
+    }
+ 
+    const directionCell = document.createElement("td");
+    directionCell.appendChild(createPill(directionLabel(iou.direction), iou.direction));
+ 
+    const amountCell = createCell(formatMoney(iou.amount));
+    amountCell.classList.add("amount");
+ 
+    const statusCell = document.createElement("td");
+    statusCell.appendChild(createPill(isPaid ? "Paid" : "Unpaid", isPaid ? "paid" : "unpaid"));
+ 
+    row.appendChild(createCell(iou.person));
+    row.appendChild(directionCell);
+    row.appendChild(amountCell);
+    row.appendChild(createCell(iou.dueDate || "-"));
+    row.appendChild(statusCell);
+ 
+    recentBody.appendChild(row);
+  });
+}

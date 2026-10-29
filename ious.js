@@ -123,3 +123,34 @@ clearButton.addEventListener("click", function () {
   // ONE click listener on the table body handles every button in every row.
 // This is called event delegation. We need it because the rows are rebuilt
 // each time, so listeners attached to individual buttons would disappear.
+tableBody.addEventListener("click", function (event) {
+  // closest("button") finds the button that was clicked (or null if the
+  // click landed somewhere else in the table).
+  const button = event.target.closest("button");
+  if (!button) {
+    return;
+  }
+
+    // dataset values are text, so convert the id back into a number.
+  const id = Number(button.dataset.id);
+  const action = button.dataset.action;
+ 
+  if (action === "toggle") {
+    // find() returns the first IOU whose id matches.
+    const iou = allIOUs.find(function (item) {
+      return item.id === id;
+    });
+    if (iou) {
+      iou.status = iou.status === "paid" ? "unpaid" : "paid";
+    }
+  } else if (action === "delete") {
+    // confirm() shows an OK / Cancel box and returns true or false.
+    if (!confirm("Delete this IOU? This cannot be undone.")) {
+      return;
+    }
+    // filter() keeps everything EXCEPT the IOU with this id.
+    allIOUs = allIOUs.filter(function (item) {
+      return item.id !== id;
+    });
+  }
+  

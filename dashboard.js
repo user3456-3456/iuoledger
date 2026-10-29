@@ -41,3 +41,17 @@ function showTotals() {
     // Math.abs removes the minus so we don't get a double sign like "--".
     netBalanceText.textContent = sign + formatMoney(Math.abs(net));
 }
+
+// ---------- 4. Fill the "Recent IOUs" table with the 5 newest ----------
+function showRecent() {
+  recentBody.innerHTML = ""; // clear anything already in the table
+ 
+  // Empty state: one row that spans all 5 columns.
+  if (ious.length === 0) {
+    const emptyRow = document.createElement("tr");
+    const emptyCell = createCell("No IOUs yet. Use Add IOU to record your first one.");
+    emptyCell.colSpan = 5;
+    emptyRow.appendChild(emptyCell);
+    recentBody.appendChild(emptyRow);
+    return;
+  }

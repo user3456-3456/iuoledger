@@ -4,3 +4,7 @@
 
 // The name (key) our data is saved under in localStorage.
 const STORAGE_KEY = "ious";
+
+// ---------- Saving and loading ----------
+ 
+// Read all saved IOUs. Always returns an array (empty if nothing is saved).

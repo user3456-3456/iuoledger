@@ -88,3 +88,26 @@ function renderRecent() {
     recentList.appendChild(item);
   });
 }
+
+// ---------- 5. Handle the form being submitted ----------
+form.addEventListener("submit", function (event) {
+  // Stop the browser from reloading the page - we handle the form ourselves.
+  event.preventDefault();
+ 
+  // Clear messages left over from the last attempt.
+  successMessage.hidden = true;
+  hideError(formError);
+ 
+  // Read what the user typed. trim() removes spaces at the start and end.
+  const person = personInput.value.trim();
+  // Input values are always TEXT. Number() turns "120" into the number 120.
+  const amount = Number(amountInput.value);
+  // Find whichever radio button is ticked and read its value ("in" or "out").
+  const direction = document.querySelector('input[name="direction"]:checked').value;
+ 
+  // Stop here if anything is invalid. Nothing gets saved.
+  if (!validate(person, amount)) {
+    return;
+  }
+
+  

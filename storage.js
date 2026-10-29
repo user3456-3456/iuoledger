@@ -75,3 +75,4 @@ function createPill(text, className) {
   pill.textContent = text;
   return pill;
 }
+

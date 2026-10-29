@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOU Ledger - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- DEMO: static sample data. JavaScript and localStorage come next. -->
+  <header>
+    <div class="wrap bar">
+      <div class="logo"><span class="mark">IO</span>IOU Ledger</div>
+      <nav aria-label="Main">
+        <a href="index.html" aria-current="page">Dashboard</a>
+        <a href="ious.html">All IOUs</a>
+        <a href="add.html">Add IOU</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="sub">Totals count unpaid IOUs only.</p>
+        </div>
+        <a href="add.html" class="btn primary">Add IOU</a>
+      </div>
+
+      <section class="stats" aria-label="Totals">
+        <div class="card"><p class="lbl">Owed to me</p><p class="big">$420.00</p></div>
+        <div class="card"><p class="lbl">I owe</p><p class="big">$105.00</p></div>
+        <div class="card"><p class="lbl">Net balance</p><p class="big">+$315.00</p></div>
+      </section>
+
+      <section class="card" aria-label="Recent IOUs">
+        <div class="head" style="margin-bottom: 8px;">
+          <h2>Recent IOUs</h2>
+          <a href="ious.html">View all IOUs</a>
+        </div>
+        <div class="tw">
+          <table>
+            <thead>
+              <tr><th>Person</th><th>Direction</th><th>Amount</th><th>Due</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Esther N.</td><td><span class="pill out">I owe</span></td><td>$60.00</td><td>2026-10-30</td><td><span class="pill unpaid">Unpaid</span></td></tr>
+              <tr class="done"><td>David M.</td><td><span class="pill in">Owes me</span></td><td class="amount">$80.00</td><td>-</td><td><span class="pill paid">Paid</span></td></tr>
+              <tr><td>Cynthia W.</td><td><span class="pill in">Owes me</span></td><td>$300.00</td><td>2026-11-20</td><td><span class="pill unpaid">Unpaid</span></td></tr>
+              <tr><td>Brian O.</td><td><span class="pill out">I owe</span></td><td>$45.00</td><td>2026-11-02</td><td><span class="pill unpaid">Unpaid</span></td></tr>
+              <tr><td>Amina K.</td><td><span class="pill in">Owes me</span></td><td>$120.00</td><td>2026-11-05</td><td><span class="pill unpaid">Unpaid</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">IOU Ledger. Your IOUs are saved in this browser only.</div>
+  </footer>
+  <!-- index.html -->
+<script src="storage.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>

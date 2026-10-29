@@ -1,0 +1,120 @@
+/* IOU Ledger - demo stylesheet (static prototype, no JavaScript yet) */
+
+:root {
+  --palette-1: #f5f0e6;
+  --palette-2: #e8dcc8;
+  --palette-3: #d4c4a8;
+  --palette-4: #c9b896;
+  --palette-5: #b8a888;
+  --ink: #2e2417;     /* dark text so it stays readable on beige */
+  --muted: #5e4f39;   /* softer text for labels */
+  --line: #8a7a5c;    /* borders on inputs and buttons */
+  --danger: #8b1a12;  /* error text and delete buttons */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "DynaPuff", system-ui, sans-serif;
+  background: var(--palette-1);
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+a { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Header, navigation, footer ---------- */
+header { background: var(--palette-2); border-bottom: 1px solid var(--palette-4); }
+footer { background: var(--palette-2); border-top: 1px solid var(--palette-4); padding: 20px 0; color: var(--muted); font-size: 0.9rem; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; }
+.mark { width: 30px; height: 30px; border-radius: 8px; background: var(--ink); color: var(--palette-1); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+nav { display: flex; flex-wrap: wrap; gap: 6px; }
+nav a { display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+nav a:hover { background: var(--palette-3); }
+nav a[aria-current="page"] { background: var(--palette-4); font-weight: 700; }
+
+/* ---------- Page layout ---------- */
+main { padding: 32px 0 48px; }
+h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.02em; }
+h2 { margin: 0; font-size: 1.15rem; }
+.sub { margin: 4px 0 0; color: var(--muted); }
+.lbl { margin: 0; font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+
+.head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.card { background: var(--palette-2); border: 1px solid var(--palette-3); border-radius: 14px; padding: 20px; }
+.stats { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 24px; }
+.big { margin: 6px 0 0; font-size: 2.1rem; font-weight: 700; }
+
+/* ---------- Buttons and pills ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--palette-1); color: var(--ink); font: inherit; font-weight: 500; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--palette-3); }
+.btn.primary { background: var(--palette-4); }
+.btn.primary:hover { background: var(--palette-5); }
+.btn.danger { color: var(--danger); }
+
+.pill { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; }
+.pill.in { background: var(--palette-4); }                         /* they owe me */
+.pill.out { background: var(--ink); color: var(--palette-1); }     /* I owe them */
+.pill.paid { background: var(--palette-3); color: var(--muted); }
+.pill.unpaid { border: 1px solid var(--line); }
+
+/* ---------- Tables ---------- */
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 0.8rem; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--palette-4); white-space: nowrap; }
+td { padding: 12px; border-bottom: 1px solid var(--palette-3); white-space: nowrap; }
+tr.done td { color: var(--muted); }
+tr.done .amount { text-decoration: line-through; }
+
+/* ---------- Filters and forms ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; margin-bottom: 16px; }
+.filters > div { flex: 1 1 160px; }
+.filters > div.wide { flex: 2 1 240px; }
+
+.field { margin-bottom: 18px; }
+input, select, textarea { display: block; width: 100%; min-height: 44px; margin-top: 6px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--palette-1); color: var(--ink); font: inherit; }
+textarea { padding: 10px 12px; min-height: 96px; resize: vertical; }
+input::placeholder, textarea::placeholder { color: var(--muted); }
+
+fieldset { border: 0; margin: 0 0 18px; padding: 0; }
+.choices { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.choice { display: flex; align-items: center; gap: 10px; flex: 1 1 160px; min-height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--palette-1); }
+.choice input { width: auto; min-height: 0; margin: 0; }
+
+.error { margin: 6px 0 0; color: var(--danger); font-size: 0.9rem; font-weight: 500; }
+.success { margin: 0 0 20px; padding: 12px 14px; border-radius: 8px; background: var(--palette-4); font-weight: 500; }
+
+.split { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.split .main-col { flex: 1.4 1 360px; }
+.split .side-col { flex: 1 1 280px; }
+.recent { list-style: none; margin: 16px 0 0; padding: 0; }
+.recent li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--palette-3); }
+.recent li:last-child { border-bottom: 0; }
+
+/* ---------- Responsive: mobile, tablet, desktop ---------- */
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  h1 { font-size: 1.5rem; }
+  .big { font-size: 1.7rem; }
+  nav { width: 100%; }
+  nav a { flex: 1 1 auto; justify-content: center; padding: 0 10px; }
+  .head .btn { width: 100%; }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .wrap { padding: 0 24px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1025px) {
+  .wrap { padding: 0 32px; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+}

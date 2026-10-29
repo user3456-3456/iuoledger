@@ -81,3 +81,22 @@ tr.done .amount { text-decoration: line-through; }
 .filters > div { flex: 1 1 160px; }
 .filters > div.wide { flex: 2 1 240px; }
 
+.field { margin-bottom: 18px; }
+input, select, textarea { display: block; width: 100%; min-height: 44px; margin-top: 6px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--palette-1); color: var(--ink); font: inherit; }
+textarea { padding: 10px 12px; min-height: 96px; resize: vertical; }
+input::placeholder, textarea::placeholder { color: var(--muted); }
+
+fieldset { border: 0; margin: 0 0 18px; padding: 0; }
+.choices { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.choice { display: flex; align-items: center; gap: 10px; flex: 1 1 160px; min-height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--palette-1); }
+.choice input { width: auto; min-height: 0; margin: 0; }
+
+.error { margin: 6px 0 0; color: var(--danger); font-size: 0.9rem; font-weight: 500; }
+.success { margin: 0 0 20px; padding: 12px 14px; border-radius: 8px; background: var(--palette-4); font-weight: 500; }
+
+.split { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.split .main-col { flex: 1.4 1 360px; }
+.split .side-col { flex: 1 1 280px; }
+.recent { list-style: none; margin: 16px 0 0; padding: 0; }
+.recent li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--palette-3); }
+.recent li:last-child { border-bottom: 0; }

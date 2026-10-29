@@ -136,3 +136,12 @@ form.addEventListener("submit", function (event) {
   renderRecent();
   personInput.focus(); // put the cursor back in the first field
 });
+
+// ---------- 6. Clear an error as soon as the user starts fixing it ----------
+personInput.addEventListener("input", function () {
+  hideError(personError);
+});
+ 
+amountInput.addEventListener("input", function () {
+  hideError(amountError);
+});

@@ -129,3 +129,10 @@ form.addEventListener("submit", function (event) {
     showError(formError, "Could not save. Your browser may be blocking storage.");
     return;
   }
+
+    // Success: reset the form, tell the user, refresh the recent list.
+  form.reset();
+  successMessage.hidden = false;
+  renderRecent();
+  personInput.focus(); // put the cursor back in the first field
+});

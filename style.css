@@ -11,3 +11,5 @@
   --line: #8a7a5c;    /* borders on inputs and buttons */
   --danger: #8b1a12;  /* error text and delete buttons */
 }
+
+* { box-sizing: border-box; }

@@ -20,3 +20,36 @@ function showError(element, message) {
   element.textContent = message;
   element.hidden = false;
 }
+
+function hideError(element) {
+  element.textContent = "";
+  element.hidden = true;
+}
+
+// ---------- 3. Validation ----------
+// Checks the values, shows a message under each bad field, and
+// returns true only when everything is fine.
+
+// ---------- 3. Validation ----------
+// Checks the values, shows a message under each bad field, and
+// returns true only when everything is fine.
+function validate(person, amount) {
+  let isValid = true;
+ 
+  if (person.length < 2) {
+    showError(personError, "Enter the person's name (at least 2 characters).");
+    isValid = false;
+  } else {
+    hideError(personError);
+  }
+ 
+  // "!(amount > 0)" is true for 0, negative numbers AND NaN (not a number).
+  if (!(amount > 0)) {
+    showError(amountError, "Enter an amount greater than 0.");
+    isValid = false;
+  } else {
+    hideError(amountError);
+  }
+ 
+  return isValid;
+}

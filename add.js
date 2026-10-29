@@ -2,7 +2,7 @@
 // Needs storage.js loaded first (loadIOUs, saveIOUs, formatMoney,
 // directionLabel, createPill).
 
-// ---------- 1. Find the elements once, at the top ----------
+// ---------- DOM ----------
 const form = document.getElementById("iou-form");
 const personInput = document.getElementById("person");
 const amountInput = document.getElementById("amount");

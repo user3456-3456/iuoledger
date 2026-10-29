@@ -1,0 +1,13 @@
+
+
+:root {
+  --palette-1: #f5f0e6;
+  --palette-2: #e8dcc8;
+  --palette-3: #d4c4a8;
+  --palette-4: #c9b896;
+  --palette-5: #b8a888;
+  --ink: #2e2417;     /* dark text so it stays readable on beige */
+  --muted: #5e4f39;   /* softer text for labels */
+  --line: #8a7a5c;    /* borders on inputs and buttons */
+  --danger: #8b1a12;  /* error text and delete buttons */
+}

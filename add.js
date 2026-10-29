@@ -145,3 +145,6 @@ personInput.addEventListener("input", function () {
 amountInput.addEventListener("input", function () {
   hideError(amountError);
 });
+
+// ---------- 7. Draw's the recent list when the page first opens ----------
+renderRecent();

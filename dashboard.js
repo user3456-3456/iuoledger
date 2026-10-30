@@ -12,7 +12,6 @@ const ious = loadIOUs();
 
 // ---------- 3. Work out the three totals ----------
 function showTotals() {
-function showTotals() {
   let owedToMe = 0; // money other people owe me
   let iOwe = 0;     // money I owe other people
 
@@ -41,7 +40,7 @@ function showTotals() {
   iOweText.textContent = formatMoney(iOwe);
   // Math.abs removes the minus so we don't get a double sign like "--".
   netBalanceText.textContent = sign + formatMoney(Math.abs(net));
-}}
+}
 
 // ---------- 4. Fill the "Recent IOUs" table with the 5 newest ----------
 function showRecent() {
